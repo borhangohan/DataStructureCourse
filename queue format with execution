@@ -1,0 +1,52 @@
+class queue:
+  def __init__(self):
+    self.data=[]
+
+  def size(self):
+    return len(self.data)
+
+  def isEmpty(self):
+    if self.size()==0:
+      return True
+    else:
+      return False
+
+  def enqueue(self,data):
+    self.data.append(data)
+
+  def dequeue(self):
+    if self.isEmpty()==True:
+      print('Queue is empty.')
+    else:
+      self.data.pop(0)
+
+  def printqueue(self):
+    if self.size()==0:
+      print('Queue is empty.')
+    else:
+      print(self.data)
+
+  def peek(self):
+    if self.size()==0:
+      print('Queue is empty.')
+    else:
+      return self.data[0]
+
+
+
+
+s=queue()
+s.printqueue()
+s.enqueue('A')
+s.enqueue('B')
+s.enqueue('C')
+s.enqueue('D')
+s.enqueue('E')
+s.enqueue('F')
+s.printqueue()
+s.dequeue()
+s.dequeue()
+s.dequeue()
+s.dequeue()
+s.printqueue()
+s.peek()
