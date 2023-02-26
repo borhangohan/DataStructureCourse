@@ -1,0 +1,89 @@
+#Question 2
+class Queue:
+    def __init__(self):
+        self.data=[]
+def enqueue(self,value):
+    self.data.append(value)
+def is_empty(self):
+    if len(self.data)==0:
+        return True
+    else:
+        return False
+def dequeue(self):
+    if self.is_empty():
+        print("Queue is empty")
+    else: self.data.pop(0)
+def fornt (self):
+    if self.is_empty():
+        print("Queue is empty")
+    else: 
+        return self.data[0]
+
+
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.parent=None
+        self.left=None
+        self.right=None
+
+def insert(root,value):
+    new_node=Node(value)
+
+    if root is None:
+        root=new_node
+    elif value< root.data:
+        root.left=insert(root.left,value)
+        root.left.parent=root
+    else:
+        root.right=insert(root.right,value)
+        root.right.parent=root
+        return root
+         
+def inorder(root):
+        if root:
+            inorder(root.left)
+           
+           
+            inorder(root.right)
+        if root.parent is None:
+            print()
+def  geoMean(root):
+    total=1
+    n=0
+    q=Queue()
+    q.enqueue(root)
+    while not q.is_empty():
+        fornt=q.fornt()
+        total= total*fornt.data ()
+        if fornt.left:
+            q.enqueue(fornt.left)
+        if fornt.right:
+            q.enqueue(fornt.right)
+            q.dequeue()
+            n=n+1
+            return total **(1/n)
+
+#Question 4
+def printLeaves(root):
+    q=Queue()
+    q.enqueue(root)
+    while not q.is_empty():
+        fornt=q.fornt()
+        if fornt.left is None and fornt.right is None:
+            print(fornt.data,end=" ")
+        if fornt.left:
+            q.enqueue(fornt.left)
+        if fornt.right:
+            q.enqueue(fornt.right)
+
+            q.dequeue()
+            print()
+
+    bst=None
+    bst=insert(bst,20)
+    bst=insert(bst,8)
+    bst=insert(bst,22)
+    bst=insert(bst,4)
+    bst=insert(bst,12)
+    bst=insert(bst,10)
