@@ -76,7 +76,8 @@ class dllist:
         while current is not None:
             yield current.data
             current=current.next
-
+            
+#TWO WAYS OF FINDING SUM BEFORE TARGETED DATA
     def sum_before(self, target_data):
         sum=0
         for data in self.traverse():
@@ -85,6 +86,17 @@ class dllist:
             if self.head is not None:
                 sum+=data
         return sum
+        
+    def sum_before_data(self, target_data):
+        sum=0
+        current=self.head
+        while current is not None:
+            if target_data==current.data:
+                break
+            sum+=current.data
+            current=current.next
+        return sum
+
 dll=dllist()
 dll.append(1)
 dll.append(2)
