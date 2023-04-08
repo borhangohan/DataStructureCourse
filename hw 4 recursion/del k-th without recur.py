@@ -20,14 +20,11 @@ class LinkedList:
     def delete_kth_element(self, k):
         if self.head is None:
             return None
-
-        # If k is 1, delete the head node and set the new head to the next node
         if k == 1:
             new_head = self.head.next
             self.head = new_head
             return new_head
 
-        # Traverse the linked list to find the k-th node and its previous node
         prev = None
         current = self.head
         i = 1
@@ -36,7 +33,6 @@ class LinkedList:
             current = current.next
             i += 1
 
-        # If the k-th node was found, delete it
         if current is not None:
             prev.next = current.next
             current.next = None
